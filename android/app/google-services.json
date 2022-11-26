@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "117949855949",
+    "project_id": "toolsschool-b8783",
+    "storage_bucket": "toolsschool-b8783.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:117949855949:android:aaca7081cc2f0d82505184",
+        "android_client_info": {
+          "package_name": "com.mycompany.toolsschool"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "117949855949-tguobbocim5ar3fbnpu729j25075ln3m.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCB3-3imTe7K22IqbyRxEgxAT8zRyk61fQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "117949855949-tguobbocim5ar3fbnpu729j25075ln3m.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "117949855949-h5i83ri63aj9hj3ne6r0o3ksjbl6kebi.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.mycompany.toolsschool"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
