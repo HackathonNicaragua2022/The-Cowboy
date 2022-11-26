@@ -33,6 +33,18 @@ abstract class DatosEstudiantesRecord
 
   String? get grado;
 
+  @BuiltValueField(wireName: 'Nota1')
+  int? get nota1;
+
+  @BuiltValueField(wireName: 'Nota2')
+  int? get nota2;
+
+  @BuiltValueField(wireName: 'Nota3')
+  int? get nota3;
+
+  @BuiltValueField(wireName: 'Nota4')
+  int? get nota4;
+
   @BuiltValueField(wireName: kDocumentReferenceField)
   DocumentReference? get ffRef;
   DocumentReference get reference => ffRef!;
@@ -49,7 +61,11 @@ abstract class DatosEstudiantesRecord
         ..telefono = 0
         ..foto = ''
         ..turno = ''
-        ..grado = '';
+        ..grado = ''
+        ..nota1 = 0
+        ..nota2 = 0
+        ..nota3 = 0
+        ..nota4 = 0;
 
   static CollectionReference get collection =>
       FirebaseFirestore.instance.collection('datos_estudiantes');
@@ -86,6 +102,10 @@ Map<String, dynamic> createDatosEstudiantesRecordData({
   String? foto,
   String? turno,
   String? grado,
+  int? nota1,
+  int? nota2,
+  int? nota3,
+  int? nota4,
 }) {
   final firestoreData = serializers.toFirestore(
     DatosEstudiantesRecord.serializer,
@@ -101,7 +121,11 @@ Map<String, dynamic> createDatosEstudiantesRecordData({
         ..telefono = telefono
         ..foto = foto
         ..turno = turno
-        ..grado = grado,
+        ..grado = grado
+        ..nota1 = nota1
+        ..nota2 = nota2
+        ..nota3 = nota3
+        ..nota4 = nota4,
     ),
   );
 

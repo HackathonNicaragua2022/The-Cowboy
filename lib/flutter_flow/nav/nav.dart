@@ -77,14 +77,14 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               appStateNotifier.loggedIn ? HomePageWidget() : CuentaWidget(),
           routes: [
             FFRoute(
-              name: 'cuenta',
-              path: 'cuenta',
-              builder: (context, params) => CuentaWidget(),
-            ),
-            FFRoute(
               name: 'MenuDocente',
               path: 'menuDocente',
               builder: (context, params) => MenuDocenteWidget(),
+            ),
+            FFRoute(
+              name: 'cuenta',
+              path: 'cuenta',
+              builder: (context, params) => CuentaWidget(),
             ),
             FFRoute(
               name: 'HomePage',
@@ -107,9 +107,9 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               builder: (context, params) => MenuAdminWidget(),
             ),
             FFRoute(
-              name: 'Datos_Estudiante',
-              path: 'datosEstudiante',
-              builder: (context, params) => DatosEstudianteWidget(),
+              name: 'Datos_Escuela',
+              path: 'datosEscuela',
+              builder: (context, params) => DatosEscuelaWidget(),
             ),
             FFRoute(
               name: 'buscar_estudiante',
@@ -122,9 +122,9 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               builder: (context, params) => DatosDocenteWidget(),
             ),
             FFRoute(
-              name: 'Datos_Escuela',
-              path: 'datosEscuela',
-              builder: (context, params) => DatosEscuelaWidget(),
+              name: 'Datos_Estudiante',
+              path: 'datosEstudiante',
+              builder: (context, params) => DatosEstudianteWidget(),
             ),
             FFRoute(
               name: 'botonesescuela',
@@ -132,14 +132,19 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               builder: (context, params) => BotonesescuelaWidget(),
             ),
             FFRoute(
+              name: 'buscar_escuelaCopy',
+              path: 'buscarEscuelaCopy',
+              builder: (context, params) => BuscarEscuelaCopyWidget(),
+            ),
+            FFRoute(
               name: 'buscar_docente',
               path: 'buscarDocente',
               builder: (context, params) => BuscarDocenteWidget(),
             ),
             FFRoute(
-              name: 'buscar_escuelaCopy',
-              path: 'buscarEscuelaCopy',
-              builder: (context, params) => BuscarEscuelaCopyWidget(),
+              name: 'cuentaCopy',
+              path: 'cuentaCopy',
+              builder: (context, params) => CuentaCopyWidget(),
             ),
             FFRoute(
               name: 'buscar_escuelaCopyCopy',
@@ -147,9 +152,19 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               builder: (context, params) => BuscarEscuelaCopyCopyWidget(),
             ),
             FFRoute(
-              name: 'test',
-              path: 'test',
-              builder: (context, params) => TestWidget(),
+              name: 'Notas_estudiantes',
+              path: 'notasEstudiantes',
+              builder: (context, params) => NotasEstudiantesWidget(),
+            ),
+            FFRoute(
+              name: 'buscar_nota_estudiante',
+              path: 'buscarNotaEstudiante',
+              builder: (context, params) => BuscarNotaEstudianteWidget(),
+            ),
+            FFRoute(
+              name: 'botonesnota',
+              path: 'botonesnota',
+              builder: (context, params) => BotonesnotaWidget(),
             )
           ].map((r) => r.toRoute(appStateNotifier)).toList(),
         ).toRoute(appStateNotifier),

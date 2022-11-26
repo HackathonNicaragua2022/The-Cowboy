@@ -7,14 +7,16 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:text_search/text_search.dart';
 
-class BuscarEstudianteWidget extends StatefulWidget {
-  const BuscarEstudianteWidget({Key? key}) : super(key: key);
+class BuscarNotaEstudianteWidget extends StatefulWidget {
+  const BuscarNotaEstudianteWidget({Key? key}) : super(key: key);
 
   @override
-  _BuscarEstudianteWidgetState createState() => _BuscarEstudianteWidgetState();
+  _BuscarNotaEstudianteWidgetState createState() =>
+      _BuscarNotaEstudianteWidgetState();
 }
 
-class _BuscarEstudianteWidgetState extends State<BuscarEstudianteWidget> {
+class _BuscarNotaEstudianteWidgetState
+    extends State<BuscarNotaEstudianteWidget> {
   List<DatosEstudiantesRecord> simpleSearchResults = [];
   TextEditingController? textController;
   final scaffoldKey = GlobalKey<ScaffoldState>();
@@ -49,7 +51,7 @@ class _BuscarEstudianteWidgetState extends State<BuscarEstudianteWidget> {
           );
         }
         List<DatosEstudiantesRecord>
-            buscarEstudianteDatosEstudiantesRecordList = snapshot.data!;
+            buscarNotaEstudianteDatosEstudiantesRecordList = snapshot.data!;
         return Scaffold(
           key: scaffoldKey,
           backgroundColor: Colors.white,
@@ -67,7 +69,7 @@ class _BuscarEstudianteWidgetState extends State<BuscarEstudianteWidget> {
                 size: 30,
               ),
               onPressed: () async {
-                context.pushNamed('botoneestudiante');
+                context.pushNamed('botonesnota');
               },
             ),
             title: Image.asset(
@@ -122,18 +124,15 @@ class _BuscarEstudianteWidgetState extends State<BuscarEstudianteWidget> {
                                   () async {
                                     setState(() {
                                       simpleSearchResults = TextSearch(
-                                        buscarEstudianteDatosEstudiantesRecordList
+                                        buscarNotaEstudianteDatosEstudiantesRecordList
                                             .map(
-                                              (record) =>
-                                                  TextSearchItem(record, [
+                                              (record) => TextSearchItem(
+                                                  record, [
                                                 record.nombre!,
                                                 record.apellido!,
                                                 record.codigoe!,
-                                                record.sexo!,
-                                                record.tutor!,
-                                                record.direccion!,
-                                                record.turno!,
-                                                record.grado!
+                                                record.grado!,
+                                                record.turno!
                                               ]),
                                             )
                                             .toList(),
@@ -262,14 +261,14 @@ class _BuscarEstudianteWidgetState extends State<BuscarEstudianteWidget> {
                                         children: [
                                           Image.network(
                                             buscarestudianteItem.foto!,
-                                            width: 150,
-                                            height: 150,
+                                            width: 100,
+                                            height: 100,
                                             fit: BoxFit.fill,
                                           ),
                                           Expanded(
                                             child: Padding(
                                               padding: EdgeInsetsDirectional
-                                                  .fromSTEB(15, 25, 5, 0),
+                                                  .fromSTEB(5, 25, 5, 0),
                                               child: Column(
                                                 mainAxisSize: MainAxisSize.max,
                                                 children: [
@@ -403,123 +402,145 @@ class _BuscarEstudianteWidgetState extends State<BuscarEstudianteWidget> {
                                                   Row(
                                                     mainAxisSize:
                                                         MainAxisSize.max,
+                                                    mainAxisAlignment:
+                                                        MainAxisAlignment
+                                                            .spaceEvenly,
                                                     children: [
-                                                      Text(
-                                                        'Email:',
-                                                        style: FlutterFlowTheme
-                                                                .of(context)
-                                                            .bodyText1
-                                                            .override(
-                                                              fontFamily:
-                                                                  'Poppins',
-                                                              color:
-                                                                  Colors.black,
-                                                            ),
-                                                      ),
-                                                    ],
-                                                  ),
-                                                  Row(
-                                                    mainAxisSize:
-                                                        MainAxisSize.max,
-                                                    children: [
-                                                      Text(
-                                                        'Hello World',
-                                                        style:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
+                                                      Column(
+                                                        mainAxisSize:
+                                                            MainAxisSize.max,
+                                                        children: [
+                                                          Text(
+                                                            'Mat',
+                                                            style: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .bodyText1
+                                                                .override(
+                                                                  fontFamily:
+                                                                      'Poppins',
+                                                                  color: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .customColor1,
+                                                                  fontSize: 16,
+                                                                ),
+                                                          ),
+                                                          Text(
+                                                            buscarestudianteItem
+                                                                .nota1!
+                                                                .toString(),
+                                                            style: FlutterFlowTheme
+                                                                    .of(context)
                                                                 .bodyText1
                                                                 .override(
                                                                   fontFamily:
                                                                       'Poppins',
                                                                   color: Color(
                                                                       0xFF2A4797),
-                                                                  fontSize: 12,
-                                                                  fontWeight:
-                                                                      FontWeight
-                                                                          .bold,
                                                                 ),
+                                                          ),
+                                                        ],
                                                       ),
-                                                    ],
-                                                  ),
-                                                  Row(
-                                                    mainAxisSize:
-                                                        MainAxisSize.max,
-                                                    children: [
-                                                      Text(
-                                                        'Telefono:',
-                                                        style: FlutterFlowTheme
-                                                                .of(context)
-                                                            .bodyText1
-                                                            .override(
-                                                              fontFamily:
-                                                                  'Poppins',
-                                                              color:
-                                                                  Colors.black,
-                                                            ),
-                                                      ),
-                                                    ],
-                                                  ),
-                                                  Row(
-                                                    mainAxisSize:
-                                                        MainAxisSize.max,
-                                                    children: [
-                                                      Text(
-                                                        'Hello World',
-                                                        style:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
+                                                      Column(
+                                                        mainAxisSize:
+                                                            MainAxisSize.max,
+                                                        children: [
+                                                          Text(
+                                                            'LL',
+                                                            style: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .bodyText1
+                                                                .override(
+                                                                  fontFamily:
+                                                                      'Poppins',
+                                                                  color: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .customColor1,
+                                                                  fontSize: 16,
+                                                                ),
+                                                          ),
+                                                          Text(
+                                                            buscarestudianteItem
+                                                                .nota2!
+                                                                .toString(),
+                                                            style: FlutterFlowTheme
+                                                                    .of(context)
                                                                 .bodyText1
                                                                 .override(
                                                                   fontFamily:
                                                                       'Poppins',
                                                                   color: Color(
                                                                       0xFF2A4797),
-                                                                  fontSize: 12,
-                                                                  fontWeight:
-                                                                      FontWeight
-                                                                          .bold,
                                                                 ),
+                                                          ),
+                                                        ],
                                                       ),
-                                                    ],
-                                                  ),
-                                                  Row(
-                                                    mainAxisSize:
-                                                        MainAxisSize.max,
-                                                    children: [
-                                                      Text(
-                                                        'Cargo:',
-                                                        style: FlutterFlowTheme
-                                                                .of(context)
-                                                            .bodyText1
-                                                            .override(
-                                                              fontFamily:
-                                                                  'Poppins',
-                                                              color:
-                                                                  Colors.black,
-                                                            ),
-                                                      ),
-                                                    ],
-                                                  ),
-                                                  Row(
-                                                    mainAxisSize:
-                                                        MainAxisSize.max,
-                                                    children: [
-                                                      Text(
-                                                        'Hello World',
-                                                        style:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
+                                                      Column(
+                                                        mainAxisSize:
+                                                            MainAxisSize.max,
+                                                        children: [
+                                                          Text(
+                                                            'Ing',
+                                                            style: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .bodyText1
+                                                                .override(
+                                                                  fontFamily:
+                                                                      'Poppins',
+                                                                  color: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .customColor1,
+                                                                  fontSize: 16,
+                                                                ),
+                                                          ),
+                                                          Text(
+                                                            buscarestudianteItem
+                                                                .nota3!
+                                                                .toString(),
+                                                            style: FlutterFlowTheme
+                                                                    .of(context)
                                                                 .bodyText1
                                                                 .override(
                                                                   fontFamily:
                                                                       'Poppins',
                                                                   color: Color(
                                                                       0xFF2A4797),
-                                                                  fontSize: 12,
-                                                                  fontWeight:
-                                                                      FontWeight
-                                                                          .bold,
                                                                 ),
+                                                          ),
+                                                        ],
+                                                      ),
+                                                      Column(
+                                                        mainAxisSize:
+                                                            MainAxisSize.max,
+                                                        children: [
+                                                          Text(
+                                                            'C.S',
+                                                            style: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .bodyText1
+                                                                .override(
+                                                                  fontFamily:
+                                                                      'Poppins',
+                                                                  color: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .customColor1,
+                                                                  fontSize: 16,
+                                                                ),
+                                                          ),
+                                                          Text(
+                                                            buscarestudianteItem
+                                                                .nota4!
+                                                                .toString(),
+                                                            style: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .bodyText1
+                                                                .override(
+                                                                  fontFamily:
+                                                                      'Poppins',
+                                                                  color: Color(
+                                                                      0xFF2A4797),
+                                                                ),
+                                                          ),
+                                                        ],
                                                       ),
                                                     ],
                                                   ),

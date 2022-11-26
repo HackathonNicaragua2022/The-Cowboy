@@ -634,6 +634,11 @@ class _BuscarEscuelaCopyWidgetState extends State<BuscarEscuelaCopyWidget> {
                                                         ),
                                                       ],
                                                     ),
+                                                    Column(
+                                                      mainAxisSize:
+                                                          MainAxisSize.max,
+                                                      children: [],
+                                                    ),
                                                     Padding(
                                                       padding:
                                                           EdgeInsetsDirectional

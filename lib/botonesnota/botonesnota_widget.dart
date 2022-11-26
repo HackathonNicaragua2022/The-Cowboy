@@ -4,21 +4,21 @@ import '../flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class BotonesescuelaWidget extends StatefulWidget {
-  const BotonesescuelaWidget({Key? key}) : super(key: key);
+class BotonesnotaWidget extends StatefulWidget {
+  const BotonesnotaWidget({Key? key}) : super(key: key);
 
   @override
-  _BotonesescuelaWidgetState createState() => _BotonesescuelaWidgetState();
+  _BotonesnotaWidgetState createState() => _BotonesnotaWidgetState();
 }
 
-class _BotonesescuelaWidgetState extends State<BotonesescuelaWidget> {
+class _BotonesnotaWidgetState extends State<BotonesnotaWidget> {
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       key: scaffoldKey,
-      backgroundColor: Color(0xFFFCFEFF),
+      backgroundColor: FlutterFlowTheme.of(context).primaryBtnText,
       appBar: AppBar(
         backgroundColor: FlutterFlowTheme.of(context).primaryColor,
         automaticallyImplyLeading: false,
@@ -36,13 +36,11 @@ class _BotonesescuelaWidgetState extends State<BotonesescuelaWidget> {
             context.pushNamed('MenuAdmin');
           },
         ),
-        title: Text(
-          'Page Title',
-          style: FlutterFlowTheme.of(context).title2.override(
-                fontFamily: 'Poppins',
-                color: Colors.white,
-                fontSize: 22,
-              ),
+        title: Image.asset(
+          'assets/images/logo_letra.png',
+          width: 200,
+          height: 100,
+          fit: BoxFit.fitWidth,
         ),
         actions: [],
         centerTitle: true,
@@ -55,27 +53,24 @@ class _BotonesescuelaWidgetState extends State<BotonesescuelaWidget> {
             mainAxisSize: MainAxisSize.max,
             children: [
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(0, 20, 0, 0),
+                padding: EdgeInsetsDirectional.fromSTEB(0, 40, 0, 0),
                 child: Row(
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(0, 20, 0, 0),
-                      child: Text(
-                        'Datos del Centro Educativo',
-                        style: FlutterFlowTheme.of(context).bodyText1.override(
-                              fontFamily: 'Poppins',
-                              color: Colors.black,
-                              fontSize: 24,
-                            ),
-                      ),
+                    Text(
+                      'Que Nesecitas',
+                      style: FlutterFlowTheme.of(context).bodyText1.override(
+                            fontFamily: 'Poppins',
+                            color: Color(0xFF2A4797),
+                            fontSize: 24,
+                          ),
                     ),
                   ],
                 ),
               ),
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(0, 80, 0, 0),
+                padding: EdgeInsetsDirectional.fromSTEB(0, 40, 0, 0),
                 child: Row(
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -85,21 +80,21 @@ class _BotonesescuelaWidgetState extends State<BotonesescuelaWidget> {
                       children: [
                         InkWell(
                           onTap: () async {
-                            context.pushNamed('Datos_Escuela');
+                            context.pushNamed('Notas_estudiantes');
                           },
                           child: Image.asset(
-                            'assets/images/Icono_Escuela_add.png',
+                            'assets/images/Icono_add_nota.png',
                             width: 100,
                             height: 100,
                             fit: BoxFit.cover,
                           ),
                         ),
                         Text(
-                          'Agregar Datos',
+                          'Agregar nota',
                           style:
                               FlutterFlowTheme.of(context).bodyText1.override(
                                     fontFamily: 'Poppins',
-                                    color: Colors.black,
+                                    color: Color(0xFF2A4797),
                                   ),
                         ),
                       ],
@@ -109,22 +104,24 @@ class _BotonesescuelaWidgetState extends State<BotonesescuelaWidget> {
                       children: [
                         InkWell(
                           onTap: () async {
-                            context.pushNamed('buscar_escuelaCopy');
+                            context.pushNamed('buscar_nota_estudiante');
                           },
                           child: Image.asset(
-                            'assets/images/Icono_Escuela_editar.png',
+                            'assets/images/Icono_buscar_nota.png',
                             width: 100,
                             height: 100,
                             fit: BoxFit.cover,
                           ),
                         ),
                         Text(
-                          'Editar Datos',
-                          style:
-                              FlutterFlowTheme.of(context).bodyText1.override(
-                                    fontFamily: 'Poppins',
-                                    color: Colors.black,
-                                  ),
+                          'Buscar Nota',
+                          style: FlutterFlowTheme.of(context)
+                              .bodyText1
+                              .override(
+                                fontFamily: 'Poppins',
+                                color:
+                                    FlutterFlowTheme.of(context).customColor1,
+                              ),
                         ),
                       ],
                     ),

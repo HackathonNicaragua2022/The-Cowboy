@@ -79,7 +79,7 @@ class _DatosEscuelaWidgetState extends State<DatosEscuelaWidget> {
             size: 30,
           ),
           onPressed: () async {
-            context.pushNamed('botonedocentes');
+            context.pushNamed('botonesescuela');
           },
         ),
         title: Image.asset(
@@ -226,6 +226,22 @@ class _DatosEscuelaWidgetState extends State<DatosEscuelaWidget> {
                   padding: EdgeInsetsDirectional.fromSTEB(0, 20, 0, 0),
                   child: Row(
                     mainAxisSize: MainAxisSize.max,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        'Nombre del Centro',
+                        style: FlutterFlowTheme.of(context).bodyText1.override(
+                              fontFamily: 'Poppins',
+                              color: FlutterFlowTheme.of(context).customColor1,
+                            ),
+                      ),
+                    ],
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsetsDirectional.fromSTEB(0, 5, 0, 0),
+                  child: Row(
+                    mainAxisSize: MainAxisSize.max,
                     children: [
                       Expanded(
                         child: Padding(
@@ -295,6 +311,22 @@ class _DatosEscuelaWidgetState extends State<DatosEscuelaWidget> {
                 ),
                 Padding(
                   padding: EdgeInsetsDirectional.fromSTEB(0, 20, 0, 0),
+                  child: Row(
+                    mainAxisSize: MainAxisSize.max,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        'Codigo Unico',
+                        style: FlutterFlowTheme.of(context).bodyText1.override(
+                              fontFamily: 'Poppins',
+                              color: FlutterFlowTheme.of(context).customColor1,
+                            ),
+                      ),
+                    ],
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsetsDirectional.fromSTEB(0, 5, 0, 0),
                   child: Row(
                     mainAxisSize: MainAxisSize.max,
                     children: [
@@ -368,6 +400,22 @@ class _DatosEscuelaWidgetState extends State<DatosEscuelaWidget> {
                   padding: EdgeInsetsDirectional.fromSTEB(0, 20, 0, 0),
                   child: Row(
                     mainAxisSize: MainAxisSize.max,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        'Cantidad de Aula',
+                        style: FlutterFlowTheme.of(context).bodyText1.override(
+                              fontFamily: 'Poppins',
+                              color: FlutterFlowTheme.of(context).customColor1,
+                            ),
+                      ),
+                    ],
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsetsDirectional.fromSTEB(0, 5, 0, 0),
+                  child: Row(
+                    mainAxisSize: MainAxisSize.max,
                     children: [
                       Expanded(
                         child: Padding(
@@ -439,6 +487,22 @@ class _DatosEscuelaWidgetState extends State<DatosEscuelaWidget> {
                   padding: EdgeInsetsDirectional.fromSTEB(0, 20, 0, 0),
                   child: Row(
                     mainAxisSize: MainAxisSize.max,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        'Nombre Director',
+                        style: FlutterFlowTheme.of(context).bodyText1.override(
+                              fontFamily: 'Poppins',
+                              color: FlutterFlowTheme.of(context).customColor1,
+                            ),
+                      ),
+                    ],
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsetsDirectional.fromSTEB(0, 5, 0, 0),
+                  child: Row(
+                    mainAxisSize: MainAxisSize.max,
                     children: [
                       Expanded(
                         child: Padding(
@@ -508,6 +572,22 @@ class _DatosEscuelaWidgetState extends State<DatosEscuelaWidget> {
                 ),
                 Padding(
                   padding: EdgeInsetsDirectional.fromSTEB(0, 20, 0, 0),
+                  child: Row(
+                    mainAxisSize: MainAxisSize.max,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        'Telefono',
+                        style: FlutterFlowTheme.of(context).bodyText1.override(
+                              fontFamily: 'Poppins',
+                              color: FlutterFlowTheme.of(context).customColor1,
+                            ),
+                      ),
+                    ],
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsetsDirectional.fromSTEB(0, 5, 0, 0),
                   child: Row(
                     mainAxisSize: MainAxisSize.max,
                     children: [
@@ -585,7 +665,7 @@ class _DatosEscuelaWidgetState extends State<DatosEscuelaWidget> {
                       Expanded(
                         child: Padding(
                           padding:
-                              EdgeInsetsDirectional.fromSTEB(20, 15, 20, 0),
+                              EdgeInsetsDirectional.fromSTEB(30, 15, 30, 0),
                           child: TextFormField(
                             controller: cdmController,
                             autofocus: true,
@@ -1004,7 +1084,6 @@ class _DatosEscuelaWidgetState extends State<DatosEscuelaWidget> {
                                 aulasController?.clear();
                                 directorController?.clear();
                                 telController?.clear();
-                                cdmController?.clear();
                                 cdvController?.clear();
                               });
                               setState(() => FFAppState().fotoescuelatemp =

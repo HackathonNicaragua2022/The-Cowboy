@@ -60,7 +60,7 @@ class _BotonedocentesWidgetState extends State<BotonedocentesWidget> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(
-                        'Que deceas Hacer',
+                        'Que deseas Hacer',
                         style: FlutterFlowTheme.of(context).bodyText1.override(
                               fontFamily: 'Poppins',
                               color: Color(0xFF2A4797),

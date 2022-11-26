@@ -100,6 +100,30 @@ class _$DatosEstudiantesRecordSerializer
         ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
+    value = object.nota1;
+    if (value != null) {
+      result
+        ..add('Nota1')
+        ..add(serializers.serialize(value, specifiedType: const FullType(int)));
+    }
+    value = object.nota2;
+    if (value != null) {
+      result
+        ..add('Nota2')
+        ..add(serializers.serialize(value, specifiedType: const FullType(int)));
+    }
+    value = object.nota3;
+    if (value != null) {
+      result
+        ..add('Nota3')
+        ..add(serializers.serialize(value, specifiedType: const FullType(int)));
+    }
+    value = object.nota4;
+    if (value != null) {
+      result
+        ..add('Nota4')
+        ..add(serializers.serialize(value, specifiedType: const FullType(int)));
+    }
     value = object.ffRef;
     if (value != null) {
       result
@@ -167,6 +191,22 @@ class _$DatosEstudiantesRecordSerializer
           result.grado = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String?;
           break;
+        case 'Nota1':
+          result.nota1 = serializers.deserialize(value,
+              specifiedType: const FullType(int)) as int?;
+          break;
+        case 'Nota2':
+          result.nota2 = serializers.deserialize(value,
+              specifiedType: const FullType(int)) as int?;
+          break;
+        case 'Nota3':
+          result.nota3 = serializers.deserialize(value,
+              specifiedType: const FullType(int)) as int?;
+          break;
+        case 'Nota4':
+          result.nota4 = serializers.deserialize(value,
+              specifiedType: const FullType(int)) as int?;
+          break;
         case 'Document__Reference__Field':
           result.ffRef = serializers.deserialize(value,
               specifiedType: const FullType(DocumentReference, const [
@@ -204,6 +244,14 @@ class _$DatosEstudiantesRecord extends DatosEstudiantesRecord {
   @override
   final String? grado;
   @override
+  final int? nota1;
+  @override
+  final int? nota2;
+  @override
+  final int? nota3;
+  @override
+  final int? nota4;
+  @override
   final DocumentReference<Object?>? ffRef;
 
   factory _$DatosEstudiantesRecord(
@@ -222,6 +270,10 @@ class _$DatosEstudiantesRecord extends DatosEstudiantesRecord {
       this.foto,
       this.turno,
       this.grado,
+      this.nota1,
+      this.nota2,
+      this.nota3,
+      this.nota4,
       this.ffRef})
       : super._();
 
@@ -249,6 +301,10 @@ class _$DatosEstudiantesRecord extends DatosEstudiantesRecord {
         foto == other.foto &&
         turno == other.turno &&
         grado == other.grado &&
+        nota1 == other.nota1 &&
+        nota2 == other.nota2 &&
+        nota3 == other.nota3 &&
+        nota4 == other.nota4 &&
         ffRef == other.ffRef;
   }
 
@@ -264,17 +320,30 @@ class _$DatosEstudiantesRecord extends DatosEstudiantesRecord {
                                 $jc(
                                     $jc(
                                         $jc(
-                                            $jc($jc(0, nombre.hashCode),
-                                                apellido.hashCode),
-                                            codigoe.hashCode),
-                                        edad.hashCode),
-                                    sexo.hashCode),
-                                tutor.hashCode),
-                            direccion.hashCode),
-                        telefono.hashCode),
-                    foto.hashCode),
-                turno.hashCode),
-            grado.hashCode),
+                                            $jc(
+                                                $jc(
+                                                    $jc(
+                                                        $jc(
+                                                            $jc(
+                                                                $jc(
+                                                                    0,
+                                                                    nombre
+                                                                        .hashCode),
+                                                                apellido
+                                                                    .hashCode),
+                                                            codigoe.hashCode),
+                                                        edad.hashCode),
+                                                    sexo.hashCode),
+                                                tutor.hashCode),
+                                            direccion.hashCode),
+                                        telefono.hashCode),
+                                    foto.hashCode),
+                                turno.hashCode),
+                            grado.hashCode),
+                        nota1.hashCode),
+                    nota2.hashCode),
+                nota3.hashCode),
+            nota4.hashCode),
         ffRef.hashCode));
   }
 
@@ -292,6 +361,10 @@ class _$DatosEstudiantesRecord extends DatosEstudiantesRecord {
           ..add('foto', foto)
           ..add('turno', turno)
           ..add('grado', grado)
+          ..add('nota1', nota1)
+          ..add('nota2', nota2)
+          ..add('nota3', nota3)
+          ..add('nota4', nota4)
           ..add('ffRef', ffRef))
         .toString();
   }
@@ -345,6 +418,22 @@ class DatosEstudiantesRecordBuilder
   String? get grado => _$this._grado;
   set grado(String? grado) => _$this._grado = grado;
 
+  int? _nota1;
+  int? get nota1 => _$this._nota1;
+  set nota1(int? nota1) => _$this._nota1 = nota1;
+
+  int? _nota2;
+  int? get nota2 => _$this._nota2;
+  set nota2(int? nota2) => _$this._nota2 = nota2;
+
+  int? _nota3;
+  int? get nota3 => _$this._nota3;
+  set nota3(int? nota3) => _$this._nota3 = nota3;
+
+  int? _nota4;
+  int? get nota4 => _$this._nota4;
+  set nota4(int? nota4) => _$this._nota4 = nota4;
+
   DocumentReference<Object?>? _ffRef;
   DocumentReference<Object?>? get ffRef => _$this._ffRef;
   set ffRef(DocumentReference<Object?>? ffRef) => _$this._ffRef = ffRef;
@@ -367,6 +456,10 @@ class DatosEstudiantesRecordBuilder
       _foto = $v.foto;
       _turno = $v.turno;
       _grado = $v.grado;
+      _nota1 = $v.nota1;
+      _nota2 = $v.nota2;
+      _nota3 = $v.nota3;
+      _nota4 = $v.nota4;
       _ffRef = $v.ffRef;
       _$v = null;
     }
@@ -401,6 +494,10 @@ class DatosEstudiantesRecordBuilder
             foto: foto,
             turno: turno,
             grado: grado,
+            nota1: nota1,
+            nota2: nota2,
+            nota3: nota3,
+            nota4: nota4,
             ffRef: ffRef);
     replace(_$result);
     return _$result;

@@ -276,11 +276,16 @@ class _MenuAdminWidgetState extends State<MenuAdminWidget> {
                       Column(
                         mainAxisSize: MainAxisSize.max,
                         children: [
-                          Image.asset(
-                            'assets/images/Icono_Notas_Estudiante.png',
-                            width: 120,
-                            height: 120,
-                            fit: BoxFit.cover,
+                          InkWell(
+                            onTap: () async {
+                              context.pushNamed('botonesnota');
+                            },
+                            child: Image.asset(
+                              'assets/images/Icono_Notas_Estudiante.png',
+                              width: 120,
+                              height: 120,
+                              fit: BoxFit.cover,
+                            ),
                           ),
                           Text(
                             'Nota Estudiante',

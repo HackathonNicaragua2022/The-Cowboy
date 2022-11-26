@@ -23,35 +23,30 @@ class _MenuDocenteWidgetState extends State<MenuDocenteWidget> {
       appBar: AppBar(
         backgroundColor: FlutterFlowTheme.of(context).primaryColor,
         automaticallyImplyLeading: false,
+        leading: FlutterFlowIconButton(
+          borderColor: Colors.transparent,
+          borderRadius: 30,
+          borderWidth: 1,
+          buttonSize: 60,
+          icon: Icon(
+            Icons.arrow_back_rounded,
+            color: Colors.white,
+            size: 30,
+          ),
+          onPressed: () {
+            print('IconButton pressed ...');
+          },
+        ),
         title: Text(
-          'Docente - Menu',
-          textAlign: TextAlign.center,
-          style: FlutterFlowTheme.of(context).bodyText1.override(
+          'Page Title',
+          style: FlutterFlowTheme.of(context).title2.override(
                 fontFamily: 'Poppins',
                 color: Colors.white,
+                fontSize: 22,
               ),
         ),
-        actions: [
-          FlutterFlowIconButton(
-            borderColor: Colors.transparent,
-            borderRadius: 25,
-            borderWidth: 1,
-            buttonSize: 60,
-            fillColor: Color(0xFF4B39EF),
-            icon: Icon(
-              Icons.login_outlined,
-              color: FlutterFlowTheme.of(context).primaryBtnText,
-              size: 20,
-            ),
-            onPressed: () async {
-              GoRouter.of(context).prepareAuthEvent();
-              await signOut();
-
-              context.goNamedAuth('cuenta', mounted);
-            },
-          ),
-        ],
-        centerTitle: false,
+        actions: [],
+        centerTitle: true,
         elevation: 2,
       ),
       body: SafeArea(
